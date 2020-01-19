@@ -1,0 +1,30 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: time-exporter
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: time-exporter
+  template:
+    metadata:
+      name: time-exporter
+      labels:
+        app: time-exporter
+      annotations:
+        prometheus.io/scrape: "true"
+        prometheus.io/port: "9001"
+    spec:
+      containers:
+      - name: time-exporter
+        image: <YOUR_DOCKER_REGISTRY_URL>
+        ports:
+        - containerPort: 9001
+        resources:
+          requests:
+            cpu: "0.1"
+            memory: "50Mi"
+          limits:
+            cpu: "0.2"
+            memory: "100Mi"
