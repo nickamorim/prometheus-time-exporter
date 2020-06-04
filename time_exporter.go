@@ -57,6 +57,6 @@ func duringOfficeHours(t time.Time) bool {
 }
 
 func duringWakingHours(t time.Time) bool {
-	// Waking hours: Monday - Friday, 7:30AM until 11:00PM
-	return t.Hour() >= 7.5 && t.Hour() < 23 && t.Weekday() != time.Saturday && t.Weekday() != time.Sunday
+	// Waking hours: Monday - Friday, 7:00AM until 11:00PM
+	return t.Hour() >= 8 && t.Hour() < 23 && t.Weekday() != time.Saturday && t.Weekday() != time.Sunday
 }
