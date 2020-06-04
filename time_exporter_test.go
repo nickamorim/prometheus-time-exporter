@@ -87,8 +87,8 @@ func TestDuringWakingHours(t *testing.T) {
 			resp: true,
 		},
 		{
-			name: "10:00 PM on Wednesday",
-			t:    time.Date(2019, 1, 2, 22, 0, 0, 0, loc),
+			name: "11:30 PM on Wednesday",
+			t:    time.Date(2019, 1, 2, 23, 30, 0, 0, loc),
 			resp: false,
 		},
 		{
